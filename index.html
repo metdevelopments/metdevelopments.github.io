@@ -3,374 +3,812 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MET DEVELOPMENTS LTD | Residential Building Construction</title>
-
+<title>MET DEVELOPMENTS LTD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
 <style>
-
-body{
-margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background:#f4f5f6;
-color:#1a1a1a;
-scroll-behavior:smooth;
-line-height:1.6;
+:root {
+--primary-color: #e5b81a;
+--bg-dark: #121212;
+--text-light: #ffffff;
+--text-dark: #1a1a1a;
+--bg-light: #f5f5f5;
+--overlay: rgba(0, 0, 0, 0.75);
+--transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
-
-header{
-position:fixed;
-top:0;
-width:100%;
-background:rgba(0,0,0,0.75);
-color:#fff;
-z-index:1000;
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
 }
-
-nav{
-max-width:1200px;
-margin:auto;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:18px 20px;
+body {
+font-family: 'Montserrat', sans-serif;
+background-color: var(--bg-light);
+color: var(--text-dark);
+line-height: 1.6;
+overflow-x: hidden;
 }
-
-.logo{
-font-size:20px;
-letter-spacing:2px;
-font-weight:bold;
+header {
+position: fixed;
+width: 100%;
+top: 0;
+z-index: 100;
+background: rgba(18, 18, 18, 0.95);
+backdrop-filter: blur(10px);
+padding: 20px 50px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+transition: var(--transition);
+border-bottom: 1px solid rgba(255,255,255,0.1);
 }
-
-nav ul{
-list-style:none;
-display:flex;
-gap:25px;
-margin:0;
-padding:0;
+.logo {
+color: var(--text-light);
+font-weight: 800;
+font-size: 24px;
+letter-spacing: 2px;
+text-decoration: none;
+display: flex;
+align-items: center;
+gap: 15px;
 }
-
-nav ul li a{
-color:#fff;
-text-decoration:none;
-font-size:14px;
-transition:0.3s;
+.logo-icon {
+width: 40px;
+height: 40px;
+border: 2px solid var(--text-light);
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 14px;
+line-height: 1;
 }
-
-nav ul li a:hover{
-color:#f4b400;
+nav ul {
+list-style: none;
+display: flex;
+gap: 40px;
 }
-
-.hero{
-height:100vh;
-background:url("https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6") center/cover no-repeat;
-display:flex;
-align-items:center;
-position:relative;
-color:#fff;
+nav ul li a {
+color: var(--text-light);
+text-decoration: none;
+font-size: 12px;
+font-weight: 600;
+letter-spacing: 1.5px;
+text-transform: uppercase;
+transition: var(--transition);
+position: relative;
+padding-bottom: 5px;
 }
-
-.hero::after{
-content:"";
-position:absolute;
-top:0;
-left:0;
-right:0;
-bottom:0;
-background:rgba(0,0,0,0.55);
+nav ul li a:hover {
+color: var(--primary-color);
 }
-
-.hero-content{
-position:relative;
-z-index:1;
-max-width:1200px;
-margin:auto;
-padding:0 20px;
+nav ul li a::after {
+content: '';
+position: absolute;
+bottom: 0;
+left: 0;
+width: 0;
+height: 2px;
+background-color: var(--primary-color);
+transition: var(--transition);
 }
-
-.hero h1{
-font-size:60px;
-margin-bottom:20px;
+nav ul li a:hover::after {
+width: 100%;
 }
-
-.hero p{
-max-width:600px;
-font-size:18px;
-margin-bottom:30px;
+.hero {
+height: 100vh;
+position: relative;
+display: flex;
+align-items: center;
+padding: 0 10%;
+background-color: var(--bg-dark);
+background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
 }
-
-.btn{
-background:#f4b400;
-color:#000;
-padding:14px 28px;
-border:none;
-cursor:pointer;
-font-weight:bold;
-transition:0.3s;
+.hero::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: linear-gradient(to right, rgba(18,18,18,0.9) 0%, rgba(18,18,18,0.4) 100%);
+z-index: 1;
 }
-
-.btn:hover{
-background:#ffcc33;
+.hero-geometric {
+position: absolute;
+bottom: 0;
+right: 15%;
+width: 40vw;
+height: 50vh;
+background-color: var(--primary-color);
+clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+opacity: 0.8;
+z-index: 2;
+mix-blend-mode: multiply;
 }
-
-section{
-padding:100px 20px;
-background:#fff;
+.hero-content {
+position: relative;
+z-index: 3;
+max-width: 800px;
 }
-
-.section-alt{
-background:#eef0f2;
+.hero h1 {
+font-size: 5vw;
+font-weight: 800;
+color: var(--text-light);
+line-height: 1.1;
+margin-bottom: 20px;
+text-transform: uppercase;
+letter-spacing: -2px;
 }
-
-.container{
-max-width:1100px;
-margin:auto;
+.hero p {
+font-size: 1.2rem;
+color: #cccccc;
+margin-bottom: 40px;
+max-width: 600px;
+font-weight: 300;
 }
-
-h2{
-font-size:36px;
-margin-bottom:15px;
+.btn {
+display: inline-block;
+padding: 18px 40px;
+border: 2px solid var(--primary-color);
+background-color: transparent;
+color: var(--text-light);
+font-size: 12px;
+font-weight: 600;
+letter-spacing: 2px;
+text-transform: uppercase;
+text-decoration: none;
+cursor: pointer;
+transition: var(--transition);
 }
-
-.subtitle{
-color:#777;
-margin-bottom:35px;
+.btn:hover {
+background-color: var(--primary-color);
+color: var(--text-dark);
 }
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:30px;
+.section-padding {
+padding: 120px 10%;
 }
-
-.card{
-background:#fff;
-padding:28px;
-box-shadow:0 4px 14px rgba(0,0,0,0.06);
+.section-title {
+font-size: 3rem;
+font-weight: 800;
+margin-bottom: 20px;
+text-transform: uppercase;
+letter-spacing: -1px;
+color: var(--text-dark);
+position: relative;
 }
-
-.process-step{
-background:#fff;
-padding:20px;
-margin-bottom:18px;
-border-left:4px solid #f4b400;
-box-shadow:0 3px 10px rgba(0,0,0,0.05);
+.section-title::before {
+content: '';
+position: absolute;
+left: 0;
+bottom: -10px;
+width: 60px;
+height: 4px;
+background-color: var(--primary-color);
 }
-
-footer{
-background:#111;
-color:#fff;
-padding:50px 20px;
+.section-subtitle {
+font-size: 1.1rem;
+color: #666666;
+margin-bottom: 60px;
+font-weight: 400;
+max-width: 700px;
 }
-
-footer p{
-margin:6px 0;
+.about-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 60px;
+align-items: center;
 }
-
-.modal{
-display:none;
-position:fixed;
-top:0;
-left:0;
-right:0;
-bottom:0;
-background:rgba(0,0,0,0.6);
-justify-content:center;
-align-items:center;
-z-index:2000;
+.about-text p {
+margin-bottom: 20px;
+font-size: 1.1rem;
+color: #444;
 }
-
-.modal-content{
-background:#fff;
-padding:30px;
-width:90%;
-max-width:420px;
-position:relative;
+.about-image {
+position: relative;
 }
-
-.close{
-position:absolute;
-top:10px;
-right:14px;
-cursor:pointer;
-font-size:20px;
+.about-image img {
+width: 100%;
+height: auto;
+display: block;
+box-shadow: 20px 20px 0px 0px var(--primary-color);
 }
-
-form{
-display:flex;
-flex-direction:column;
-gap:12px;
+.services {
+background-color: var(--bg-dark);
+color: var(--text-light);
 }
-
-input, textarea{
-padding:10px;
-border:1px solid #ccc;
-font-size:14px;
+.services .section-title {
+color: var(--text-light);
 }
-
-.success{
-display:none;
-text-align:center;
+.services .section-subtitle {
+color: #aaaaaa;
 }
-
+.services-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 40px;
+}
+.service-card {
+background: rgba(255,255,255,0.05);
+padding: 50px 40px;
+border-top: 4px solid transparent;
+transition: var(--transition);
+}
+.service-card:hover {
+border-top-color: var(--primary-color);
+background: rgba(255,255,255,0.08);
+transform: translateY(-10px);
+}
+.service-icon {
+margin-bottom: 30px;
+}
+.service-icon svg {
+width: 50px;
+height: 50px;
+fill: var(--primary-color);
+}
+.service-title {
+font-size: 1.5rem;
+font-weight: 600;
+margin-bottom: 20px;
+text-transform: uppercase;
+letter-spacing: 1px;
+}
+.service-desc {
+font-size: 0.95rem;
+color: #bbbbbb;
+}
+.advantages {
+background-color: var(--bg-light);
+}
+.adv-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 50px;
+}
+.adv-item {
+position: relative;
+padding-left: 80px;
+}
+.adv-number {
+position: absolute;
+left: 0;
+top: -10px;
+font-size: 4rem;
+font-weight: 800;
+color: rgba(229, 184, 26, 0.3);
+line-height: 1;
+}
+.adv-title {
+font-size: 1.2rem;
+font-weight: 800;
+margin-bottom: 15px;
+text-transform: uppercase;
+}
+.adv-desc {
+color: #555;
+font-size: 0.95rem;
+}
+.process {
+background-color: #ffffff;
+}
+.process-wrapper {
+display: flex;
+justify-content: space-between;
+position: relative;
+margin-top: 80px;
+}
+.process-wrapper::before {
+content: '';
+position: absolute;
+top: 40px;
+left: 0;
+width: 100%;
+height: 2px;
+background-color: #eeeeee;
+z-index: 1;
+}
+.process-step {
+flex: 1;
+text-align: center;
+position: relative;
+z-index: 2;
+padding: 0 20px;
+}
+.step-icon {
+width: 80px;
+height: 80px;
+background-color: var(--bg-dark);
+border-radius: 50%;
+display: flex;
+justify-content: center;
+align-items: center;
+margin: 0 auto 30px;
+border: 4px solid var(--primary-color);
+transition: var(--transition);
+}
+.process-step:hover .step-icon {
+background-color: var(--primary-color);
+transform: scale(1.1);
+}
+.step-icon svg {
+width: 30px;
+height: 30px;
+fill: #ffffff;
+}
+.process-step:hover .step-icon svg {
+fill: var(--bg-dark);
+}
+.step-title {
+font-size: 1.1rem;
+font-weight: 800;
+margin-bottom: 15px;
+text-transform: uppercase;
+}
+.step-desc {
+font-size: 0.9rem;
+color: #666;
+}
+.contact-section {
+background-color: var(--bg-dark);
+color: var(--text-light);
+text-align: center;
+}
+.contact-section .section-title {
+color: var(--text-light);
+}
+.contact-section .section-title::before {
+left: 50%;
+transform: translateX(-50%);
+}
+.contact-info {
+display: flex;
+justify-content: center;
+gap: 60px;
+margin-top: 60px;
+margin-bottom: 60px;
+}
+.info-block {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.info-block svg {
+width: 40px;
+height: 40px;
+fill: var(--primary-color);
+margin-bottom: 20px;
+}
+.info-block h4 {
+font-size: 1.2rem;
+font-weight: 600;
+margin-bottom: 10px;
+text-transform: uppercase;
+}
+.info-block p {
+color: #cccccc;
+font-size: 1rem;
+}
+footer {
+background-color: #0a0a0a;
+color: #555555;
+text-align: center;
+padding: 30px 20px;
+font-size: 0.9rem;
+}
+.modal-overlay {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.85);
+z-index: 1000;
+display: flex;
+justify-content: center;
+align-items: center;
+opacity: 0;
+visibility: hidden;
+transition: var(--transition);
+backdrop-filter: blur(5px);
+}
+.modal-overlay.active {
+opacity: 1;
+visibility: visible;
+}
+.modal-box {
+background-color: var(--bg-light);
+width: 90%;
+max-width: 600px;
+padding: 50px;
+position: relative;
+transform: translateY(50px);
+transition: var(--transition);
+box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+.modal-overlay.active .modal-box {
+transform: translateY(0);
+}
+.close-btn {
+position: absolute;
+top: 20px;
+right: 20px;
+width: 30px;
+height: 30px;
+background: transparent;
+border: none;
+cursor: pointer;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.close-btn svg {
+width: 20px;
+height: 20px;
+fill: var(--text-dark);
+transition: var(--transition);
+}
+.close-btn:hover svg {
+fill: var(--primary-color);
+}
+.modal-title {
+font-size: 2rem;
+font-weight: 800;
+margin-bottom: 30px;
+text-transform: uppercase;
+color: var(--text-dark);
+}
+.form-group {
+margin-bottom: 25px;
+}
+.form-control {
+width: 100%;
+padding: 15px 20px;
+background-color: #ffffff;
+border: 1px solid #dddddd;
+font-family: 'Montserrat', sans-serif;
+font-size: 1rem;
+color: var(--text-dark);
+transition: var(--transition);
+outline: none;
+}
+.form-control:focus {
+border-color: var(--primary-color);
+box-shadow: 0 0 0 2px rgba(229, 184, 26, 0.2);
+}
+textarea.form-control {
+height: 150px;
+resize: none;
+}
+.submit-btn {
+width: 100%;
+padding: 20px;
+background-color: var(--text-dark);
+color: var(--text-light);
+border: none;
+font-size: 1.1rem;
+font-weight: 600;
+text-transform: uppercase;
+letter-spacing: 2px;
+cursor: pointer;
+transition: var(--transition);
+font-family: 'Montserrat', sans-serif;
+}
+.submit-btn:hover {
+background-color: var(--primary-color);
+color: var(--text-dark);
+}
+.success-content {
+text-align: center;
+}
+.success-icon {
+width: 80px;
+height: 80px;
+background-color: var(--primary-color);
+border-radius: 50%;
+display: flex;
+justify-content: center;
+align-items: center;
+margin: 0 auto 30px;
+}
+.success-icon svg {
+width: 40px;
+height: 40px;
+fill: var(--text-dark);
+}
+.success-title {
+font-size: 2rem;
+font-weight: 800;
+margin-bottom: 15px;
+color: var(--text-dark);
+text-transform: uppercase;
+}
+.success-text {
+color: #555;
+font-size: 1.1rem;
+margin-bottom: 30px;
+}
+@media (max-width: 1024px) {
+.about-grid {
+grid-template-columns: 1fr;
+}
+.services-grid, .adv-grid {
+grid-template-columns: repeat(2, 1fr);
+}
+.hero h1 {
+font-size: 4rem;
+}
+}
+@media (max-width: 768px) {
+header {
+padding: 20px;
+}
+nav ul {
+display: none;
+}
+.hero h1 {
+font-size: 3rem;
+}
+.services-grid, .adv-grid {
+grid-template-columns: 1fr;
+}
+.process-wrapper {
+flex-direction: column;
+gap: 40px;
+}
+.process-wrapper::before {
+display: none;
+}
+.contact-info {
+flex-direction: column;
+gap: 30px;
+}
+.hero-geometric {
+width: 80vw;
+right: 10%;
+}
+}
 </style>
 </head>
-
 <body>
-
-<header>
+<header id="header">
+<a href="#" class="logo">
+<div class="logo-icon">M</div>
+MET
+</a>
 <nav>
-<div class="logo">MET DEVELOPMENTS</div>
 <ul>
-<li><a href="#about">About</a></li>
-<li><a href="#services">Services</a></li>
-<li><a href="#mission">Mission</a></li>
-<li><a href="#process">Process</a></li>
-<li><a href="#contact" onclick="openModal()">Contact</a></li>
+<li><a href="#about">Corporate Identity</a></li>
+<li><a href="#services">Operations</a></li>
+<li><a href="#advantages">Strategic Value</a></li>
+<li><a href="#process">Methodology</a></li>
+<li><a href="#contact">Communication</a></li>
 </ul>
 </nav>
 </header>
-
-<div class="hero">
+<section class="hero" id="home">
+<div class="hero-geometric"></div>
 <div class="hero-content">
-<h1>Designed for Modern Living</h1>
-<p>Residential construction and property development across the United Kingdom with a focus on structural reliability, efficient delivery, and long-term property value.</p>
-<button class="btn" onclick="openModal()">Request Consultation</button>
-</div>
-</div>
-
-<section id="about">
-<div class="container">
-<h2>About MET DEVELOPMENTS LTD</h2>
-<p class="subtitle">Residential building specialists based in Leigh-on-Sea.</p>
-
-<p>MET DEVELOPMENTS LTD delivers residential construction projects with a practical and disciplined approach. Our work covers new-build homes, structural extensions, and small to mid-scale development schemes. Each project is managed with attention to structural performance, regulatory compliance, and realistic construction timelines.</p>
-
-<p>We coordinate closely with architects, engineers, and planning consultants to ensure that every stage meets UK building standards. Our team focuses on efficient site management, controlled procurement, and transparent communication throughout the build cycle.</p>
-
-<p>We prioritise durable materials, energy-conscious solutions, and layouts designed for everyday use. The objective is not only to complete construction, but to deliver properties that remain functional and valuable over time.</p>
-
-<p>From initial feasibility to final handover, projects are delivered with documented milestones and clear reporting. Clients receive predictable progress and controlled execution rather than uncertainty.</p>
-
+<h1>Architectural Precision.<br>Build Excellence.</h1>
+<p>Delivering sophisticated residential construction solutions across the United Kingdom, integrating modern structural engineering with timeless design architecture.</p>
+<button class="btn" onclick="openModal('contactModal')">Initiate Project Dialogue</button>
 </div>
 </section>
-
-<section id="services" class="section-alt">
-<div class="container">
-<h2>Construction Services</h2>
-<p class="subtitle">Focused residential solutions.</p>
-
-<div class="grid">
-
-<div class="card">
-<h3>New Build Homes</h3>
-<p>Complete residential construction from groundworks through to final finishes. Structural safety, insulation performance, and build quality are prioritised at every stage. Projects are delivered in accordance with current UK regulations and inspection requirements.</p>
+<section class="section-padding" id="about">
+<div class="about-grid">
+<div>
+<h2 class="section-title">Corporate Overview</h2>
+<h3 class="section-subtitle">Defining the parameters of modern residential infrastructure.</h3>
+<div class="about-text">
+<p>MET DEVELOPMENTS LTD represents the apex of residential building construction in the United Kingdom. We operate directly at the intersection of structural integrity and aesthetic innovation.</p>
+<p>Our methodology transcends traditional building practices by incorporating advanced project management software and modern material science. We engineer living spaces that respond to contemporary lifestyle demands while ensuring generational durability.</p>
+<p>Every project undertaken is an exercise in rigorous planning and flawless execution. We continuously redefine the standard metrics of the British residential landscape.</p>
 </div>
-
-<div class="card">
-<h3>Residential Development Projects</h3>
-<p>Support for small and medium housing developments including planning coordination and build delivery. Cost control and programme discipline ensure predictable outcomes. Developments are structured to maximise long-term property value.</p>
 </div>
-
-<div class="card">
-<h3>Extensions and Conversions</h3>
-<p>Rear extensions, loft conversions, and structural reconfiguration for existing homes. Work is planned to minimise disruption and maintain structural integrity. Approvals and compliance checks are integrated into the process.</p>
-</div>
-
+<div class="about-image">
+<img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Architectural Structure">
 </div>
 </div>
 </section>
-
-<section id="mission">
-<div class="container">
-<h2>Our Mission and Standards</h2>
-<p class="subtitle">What drives our work.</p>
-
-<p>Our mission is to deliver residential construction that balances design quality with practical performance. We focus on efficient building methods that reduce delays and unnecessary cost escalation.</p>
-
-<p>Energy efficiency is considered at the planning stage through insulation strategy, ventilation performance, and material selection. This supports lower long-term operating costs for property owners.</p>
-
-<p>We aim to maintain predictable delivery through detailed scheduling, supplier planning, and structured site supervision. Quality checks are conducted at key build stages rather than only at completion.</p>
-
-<p>All decisions are guided by long-term durability, safety, and usability rather than short-term visual appeal alone.</p>
-
+<section class="section-padding services" id="services">
+<h2 class="section-title">Core Operations</h2>
+<h3 class="section-subtitle">Executing complex structural requirements with systematic precision.</h3>
+<div class="services-grid">
+<div class="service-card">
+<div class="service-icon">
+<svg viewBox="0 0 24 24">
+<path d="M12 3L2 12H5V21H19V12H22L12 3M12 5.8L18.2 12H17V20H7V12H5.8L12 5.8M9 14H15V19H9V14Z" />
+</svg>
+</div>
+<h4 class="service-title">Premium Construction</h4>
+<p class="service-desc">We execute ground-up construction of bespoke residential properties. Our approach utilizes predictive modeling to eliminate structural vulnerabilities before ground is broken. The result is uncompromising build quality.</p>
+</div>
+<div class="service-card">
+<div class="service-icon">
+<svg viewBox="0 0 24 24">
+<path d="M22 14H20V6H14V4H22V14M10 4H2V20H22V16H20V18H4V6H8V4H10M14 8H20V14H14V8M16 10V12H18V10H16M10 8H12V14H10V8M6 8H8V14H6V8Z" />
+</svg>
+</div>
+<h4 class="service-title">Structural Redesign</h4>
+<p class="service-desc">We transform existing structures through intelligent redesign and complex engineering. Our team evaluates load-bearing capacities to optimize every square meter. We integrate extensions with the original architectural language.</p>
+</div>
+<div class="service-card">
+<div class="service-icon">
+<svg viewBox="0 0 24 24">
+<path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2M11 19.93C7.05 19.43 4 16.05 4 12C4 7.95 7.05 4.57 11 4.07V19.93M13 4.07C16.95 4.57 20 7.95 20 12C20 16.05 16.95 19.43 13 19.93V4.07Z" />
+</svg>
+</div>
+<h4 class="service-title">Smart Integration</h4>
+<p class="service-desc">We embed state-of-the-art technological infrastructures into the core of our builds. From climate control to automation, systems are intrinsically wired during construction. This ensures a flawless user experience.</p>
+</div>
 </div>
 </section>
-
-<section id="process" class="section-alt">
-<div class="container">
-<h2>How We Deliver Projects</h2>
-<p class="subtitle">Structured execution.</p>
-
+<section class="section-padding advantages" id="advantages">
+<h2 class="section-title">Strategic Value</h2>
+<h3 class="section-subtitle">Differentiators that establish our market dominance.</h3>
+<div class="adv-grid">
+<div class="adv-item">
+<div class="adv-number">01</div>
+<h4 class="adv-title">Data-Driven Management</h4>
+<p class="adv-desc">We utilize advanced logistical software to track progress in real-time. This eliminates procedural inefficiencies and ensures strict adherence to established project timelines.</p>
+</div>
+<div class="adv-item">
+<div class="adv-number">02</div>
+<h4 class="adv-title">Rigorous Quality Control</h4>
+<p class="adv-desc">Multiple sequential phases of structural inspection guarantee compliance. Every component meets or exceeds stringent British engineering and safety standards.</p>
+</div>
+<div class="adv-item">
+<div class="adv-number">03</div>
+<h4 class="adv-title">Sustainable Logistics</h4>
+<p class="adv-desc">We prioritize the procurement of ecologically sound materials. These resources offer superior thermal performance, significantly reducing long-term environmental impact.</p>
+</div>
+</div>
+</section>
+<section class="section-padding process" id="process">
+<h2 class="section-title" style="text-align: center;">Operational Protocol</h2>
+<h3 class="section-subtitle" style="text-align: center; margin: 0 auto 60px;">Standardized procedures for architectural realization.</h3>
+<div class="process-wrapper">
 <div class="process-step">
-<h3>Stage 1 – Assessment</h3>
-<p>Initial discussion, site evaluation, scope definition, and feasibility review including planning and budget considerations.</p>
+<div class="step-icon">
+<svg viewBox="0 0 24 24">
+<path d="M12 2L2 12H5V20H19V12H22L12 2M12 4.8L17.2 10H15V18H9V10H6.8L12 4.8Z" />
+</svg>
 </div>
-
+<h4 class="step-title">Analytical Feasibility</h4>
+<p class="step-desc">Comprehensive site surveying and digital blueprint generation to establish baseline structural parameters.</p>
+</div>
 <div class="process-step">
-<h3>Stage 2 – Planning</h3>
-<p>Programme development, procurement scheduling, contractor coordination, and regulatory preparation before construction begins.</p>
+<div class="step-icon">
+<svg viewBox="0 0 24 24">
+<path d="M22.7 19L13.6 9.9C14.5 7.6 14 4.9 12.1 3C10.1 1 7.1 0.6 4.7 1.7L9 6L6 9L1.7 4.7C0.6 7.1 1 10.1 3 12.1C4.9 14 7.6 14.5 9.9 13.6L19 22.7C19.5 23.2 20.3 23.2 20.8 22.7L22.7 20.8C23.2 20.3 23.2 19.5 22.7 19M19 20L11.5 12.5C11.5 12.5 12.8 11.2 12.8 11.2L20.3 18.7L19 20Z" />
+</svg>
 </div>
-
+<h4 class="step-title">Precision Engineering</h4>
+<p class="step-desc">Systematic execution of the physical build phase, managed through strictly enforced operational protocols.</p>
+</div>
 <div class="process-step">
-<h3>Stage 3 – Construction and Handover</h3>
-<p>Build execution with staged inspections, quality control, and final documentation upon completion.</p>
+<div class="step-icon">
+<svg viewBox="0 0 24 24">
+<path d="M21 7L9 19L3.5 13.5L4.91 12.09L9 16.17L19.59 5.59L21 7Z" />
+</svg>
 </div>
-
+<h4 class="step-title">Inspection & Handover</h4>
+<p class="step-desc">Final multi-point structural analysis followed by the formal delivery of the completed physical asset.</p>
+</div>
 </div>
 </section>
-
-<footer id="contact">
-<div class="container">
-<h3>Contact Information</h3>
-<p>MET DEVELOPMENTS LTD</p>
-<p>1301 London Road</p>
-<p>Leigh-on-Sea</p>
-<p>SS9 2AD</p>
-<p>United Kingdom</p>
-<p>Email: info@metdevelopments.info</p>
-<button class="btn" onclick="openModal()">Send Enquiry</button>
+<section class="section-padding contact-section" id="contact">
+<h2 class="section-title">Establish Contact</h2>
+<h3 class="section-subtitle" style="margin: 0 auto;">Direct channels for project initiation and consultation.</h3>
+<div class="contact-info">
+<div class="info-block">
+<svg viewBox="0 0 24 24">
+<path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2M12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" />
+</svg>
+<h4>Corporate Headquarters</h4>
+<p>1301 LONDON ROAD LEIGH-ON-SEA<br>SS9 2AD United Kingdom</p>
 </div>
+<div class="info-block">
+<svg viewBox="0 0 24 24">
+<path d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4M20 8L12 13L4 8V6L12 11L20 6V8Z" />
+</svg>
+<h4>Digital Dispatch</h4>
+<p>main@metdevelopments.info</p>
+</div>
+</div>
+<button class="btn" onclick="openModal('contactModal')">Open Secure Transmission</button>
+</section>
+<footer>
+<p>&copy; <span id="year"></span> MET DEVELOPMENTS LTD. All rights reserved. Registered in the United Kingdom.</p>
 </footer>
-
-<div class="modal" id="modal">
-<div class="modal-content">
-<span class="close" onclick="closeModal()">×</span>
-
-<form id="form">
-<h3>Project Enquiry</h3>
-<input type="text" placeholder="Full Name" required>
-<input type="email" placeholder="Email Address" required>
-<textarea rows="4" placeholder="Describe your project or request" required></textarea>
-<button class="btn" type="submit">Submit</button>
+<div class="modal-overlay" id="contactModal">
+<div class="modal-box">
+<button class="close-btn" onclick="closeModal('contactModal')">
+<svg viewBox="0 0 24 24">
+<path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" />
+</svg>
+</button>
+<h3 class="modal-title">Project Inquiry</h3>
+<form id="inquiryForm" onsubmit="handleFormSubmit(event)">
+<div class="form-group">
+<input type="text" class="form-control" placeholder="Authorized Representative Name" required autocomplete="name">
+</div>
+<div class="form-group">
+<input type="email" class="form-control" placeholder="Corporate Email Address" required autocomplete="email">
+</div>
+<div class="form-group">
+<input type="text" class="form-control" placeholder="Project Directive / Subject" required>
+</div>
+<div class="form-group">
+<textarea class="form-control" placeholder="Provide structural parameters or project scope..." required></textarea>
+</div>
+<button type="submit" class="submit-btn">Transmit Data</button>
 </form>
-
-<div class="success" id="success">
-<h3>Message Sent</h3>
-<p>Your enquiry has been received. Our team will respond by email.</p>
-<button class="btn" onclick="closeModal()">Close</button>
-</div>
-
 </div>
 </div>
-
+<div class="modal-overlay" id="successModal">
+<div class="modal-box success-content">
+<button class="close-btn" onclick="closeModal('successModal')">
+<svg viewBox="0 0 24 24">
+<path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" />
+</svg>
+</button>
+<div class="success-icon">
+<svg viewBox="0 0 24 24">
+<path d="M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z" />
+</svg>
+</div>
+<h3 class="success-title">Transmission Secured</h3>
+<p class="success-text">Your project directive has been successfully logged into our system. An authorized representative from MET DEVELOPMENTS LTD will initiate contact shortly.</p>
+<button class="btn" onclick="closeModal('successModal')" style="color: var(--text-dark); border-color: var(--text-dark);">Acknowledge</button>
+</div>
+</div>
 <script>
-
-function openModal(){
-document.getElementById("modal").style.display="flex";
+document.getElementById('year').textContent = new Date().getFullYear();
+window.addEventListener('scroll', function() {
+const header = document.getElementById('header');
+if (window.scrollY > 50) {
+header.style.background = 'rgba(18, 18, 18, 0.98)';
+header.style.padding = '15px 50px';
+} else {
+header.style.background = 'rgba(18, 18, 18, 0.8)';
+header.style.padding = '20px 50px';
 }
-
-function closeModal(){
-document.getElementById("modal").style.display="none";
-document.getElementById("form").style.display="flex";
-document.getElementById("success").style.display="none";
-}
-
-document.getElementById("form").addEventListener("submit", function(e){
-e.preventDefault();
-this.style.display="none";
-document.getElementById("success").style.display="block";
 });
-
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function (e) {
+e.preventDefault();
+document.querySelector(this.getAttribute('href')).scrollIntoView({
+behavior: 'smooth'
+});
+});
+});
+function openModal(modalId) {
+document.getElementById(modalId).classList.add('active');
+document.body.style.overflow = 'hidden';
+}
+function closeModal(modalId) {
+document.getElementById(modalId).classList.remove('active');
+document.body.style.overflow = 'auto';
+}
+function handleFormSubmit(event) {
+event.preventDefault();
+closeModal('contactModal');
+setTimeout(function() {
+openModal('successModal');
+document.getElementById('inquiryForm').reset();
+}, 400);
+}
+document.querySelectorAll('.modal-overlay').forEach(overlay => {
+overlay.addEventListener('click', function(e) {
+if (e.target === this) {
+closeModal(this.id);
+}
+});
+});
 </script>
-
 </body>
 </html>
