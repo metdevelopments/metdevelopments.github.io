@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MET DEVELOPMENTS LTD | Residential Building Construction</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#f4f5f6;
+color:#1a1a1a;
+scroll-behavior:smooth;
+line-height:1.6;
+}
+
+header{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(0,0,0,0.75);
+color:#fff;
+z-index:1000;
+}
+
+nav{
+max-width:1200px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 20px;
+}
+
+.logo{
+font-size:20px;
+letter-spacing:2px;
+font-weight:bold;
+}
+
+nav ul{
+list-style:none;
+display:flex;
+gap:25px;
+margin:0;
+padding:0;
+}
+
+nav ul li a{
+color:#fff;
+text-decoration:none;
+font-size:14px;
+transition:0.3s;
+}
+
+nav ul li a:hover{
+color:#f4b400;
+}
+
+.hero{
+height:100vh;
+background:url("https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6") center/cover no-repeat;
+display:flex;
+align-items:center;
+position:relative;
+color:#fff;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+top:0;
+left:0;
+right:0;
+bottom:0;
+background:rgba(0,0,0,0.55);
+}
+
+.hero-content{
+position:relative;
+z-index:1;
+max-width:1200px;
+margin:auto;
+padding:0 20px;
+}
+
+.hero h1{
+font-size:60px;
+margin-bottom:20px;
+}
+
+.hero p{
+max-width:600px;
+font-size:18px;
+margin-bottom:30px;
+}
+
+.btn{
+background:#f4b400;
+color:#000;
+padding:14px 28px;
+border:none;
+cursor:pointer;
+font-weight:bold;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#ffcc33;
+}
+
+section{
+padding:100px 20px;
+background:#fff;
+}
+
+.section-alt{
+background:#eef0f2;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+}
+
+h2{
+font-size:36px;
+margin-bottom:15px;
+}
+
+.subtitle{
+color:#777;
+margin-bottom:35px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.card{
+background:#fff;
+padding:28px;
+box-shadow:0 4px 14px rgba(0,0,0,0.06);
+}
+
+.process-step{
+background:#fff;
+padding:20px;
+margin-bottom:18px;
+border-left:4px solid #f4b400;
+box-shadow:0 3px 10px rgba(0,0,0,0.05);
+}
+
+footer{
+background:#111;
+color:#fff;
+padding:50px 20px;
+}
+
+footer p{
+margin:6px 0;
+}
+
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+right:0;
+bottom:0;
+background:rgba(0,0,0,0.6);
+justify-content:center;
+align-items:center;
+z-index:2000;
+}
+
+.modal-content{
+background:#fff;
+padding:30px;
+width:90%;
+max-width:420px;
+position:relative;
+}
+
+.close{
+position:absolute;
+top:10px;
+right:14px;
+cursor:pointer;
+font-size:20px;
+}
+
+form{
+display:flex;
+flex-direction:column;
+gap:12px;
+}
+
+input, textarea{
+padding:10px;
+border:1px solid #ccc;
+font-size:14px;
+}
+
+.success{
+display:none;
+text-align:center;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+<div class="logo">MET DEVELOPMENTS</div>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#mission">Mission</a></li>
+<li><a href="#process">Process</a></li>
+<li><a href="#contact" onclick="openModal()">Contact</a></li>
+</ul>
+</nav>
+</header>
+
+<div class="hero">
+<div class="hero-content">
+<h1>Designed for Modern Living</h1>
+<p>Residential construction and property development across the United Kingdom with a focus on structural reliability, efficient delivery, and long-term property value.</p>
+<button class="btn" onclick="openModal()">Request Consultation</button>
+</div>
+</div>
+
+<section id="about">
+<div class="container">
+<h2>About MET DEVELOPMENTS LTD</h2>
+<p class="subtitle">Residential building specialists based in Leigh-on-Sea.</p>
+
+<p>MET DEVELOPMENTS LTD delivers residential construction projects with a practical and disciplined approach. Our work covers new-build homes, structural extensions, and small to mid-scale development schemes. Each project is managed with attention to structural performance, regulatory compliance, and realistic construction timelines.</p>
+
+<p>We coordinate closely with architects, engineers, and planning consultants to ensure that every stage meets UK building standards. Our team focuses on efficient site management, controlled procurement, and transparent communication throughout the build cycle.</p>
+
+<p>We prioritise durable materials, energy-conscious solutions, and layouts designed for everyday use. The objective is not only to complete construction, but to deliver properties that remain functional and valuable over time.</p>
+
+<p>From initial feasibility to final handover, projects are delivered with documented milestones and clear reporting. Clients receive predictable progress and controlled execution rather than uncertainty.</p>
+
+</div>
+</section>
+
+<section id="services" class="section-alt">
+<div class="container">
+<h2>Construction Services</h2>
+<p class="subtitle">Focused residential solutions.</p>
+
+<div class="grid">
+
+<div class="card">
+<h3>New Build Homes</h3>
+<p>Complete residential construction from groundworks through to final finishes. Structural safety, insulation performance, and build quality are prioritised at every stage. Projects are delivered in accordance with current UK regulations and inspection requirements.</p>
+</div>
+
+<div class="card">
+<h3>Residential Development Projects</h3>
+<p>Support for small and medium housing developments including planning coordination and build delivery. Cost control and programme discipline ensure predictable outcomes. Developments are structured to maximise long-term property value.</p>
+</div>
+
+<div class="card">
+<h3>Extensions and Conversions</h3>
+<p>Rear extensions, loft conversions, and structural reconfiguration for existing homes. Work is planned to minimise disruption and maintain structural integrity. Approvals and compliance checks are integrated into the process.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="mission">
+<div class="container">
+<h2>Our Mission and Standards</h2>
+<p class="subtitle">What drives our work.</p>
+
+<p>Our mission is to deliver residential construction that balances design quality with practical performance. We focus on efficient building methods that reduce delays and unnecessary cost escalation.</p>
+
+<p>Energy efficiency is considered at the planning stage through insulation strategy, ventilation performance, and material selection. This supports lower long-term operating costs for property owners.</p>
+
+<p>We aim to maintain predictable delivery through detailed scheduling, supplier planning, and structured site supervision. Quality checks are conducted at key build stages rather than only at completion.</p>
+
+<p>All decisions are guided by long-term durability, safety, and usability rather than short-term visual appeal alone.</p>
+
+</div>
+</section>
+
+<section id="process" class="section-alt">
+<div class="container">
+<h2>How We Deliver Projects</h2>
+<p class="subtitle">Structured execution.</p>
+
+<div class="process-step">
+<h3>Stage 1 – Assessment</h3>
+<p>Initial discussion, site evaluation, scope definition, and feasibility review including planning and budget considerations.</p>
+</div>
+
+<div class="process-step">
+<h3>Stage 2 – Planning</h3>
+<p>Programme development, procurement scheduling, contractor coordination, and regulatory preparation before construction begins.</p>
+</div>
+
+<div class="process-step">
+<h3>Stage 3 – Construction and Handover</h3>
+<p>Build execution with staged inspections, quality control, and final documentation upon completion.</p>
+</div>
+
+</div>
+</section>
+
+<footer id="contact">
+<div class="container">
+<h3>Contact Information</h3>
+<p>MET DEVELOPMENTS LTD</p>
+<p>1301 London Road</p>
+<p>Leigh-on-Sea</p>
+<p>SS9 2AD</p>
+<p>United Kingdom</p>
+<p>Email: info@metdevelopments.info</p>
+<button class="btn" onclick="openModal()">Send Enquiry</button>
+</div>
+</footer>
+
+<div class="modal" id="modal">
+<div class="modal-content">
+<span class="close" onclick="closeModal()">×</span>
+
+<form id="form">
+<h3>Project Enquiry</h3>
+<input type="text" placeholder="Full Name" required>
+<input type="email" placeholder="Email Address" required>
+<textarea rows="4" placeholder="Describe your project or request" required></textarea>
+<button class="btn" type="submit">Submit</button>
+</form>
+
+<div class="success" id="success">
+<h3>Message Sent</h3>
+<p>Your enquiry has been received. Our team will respond by email.</p>
+<button class="btn" onclick="closeModal()">Close</button>
+</div>
+
+</div>
+</div>
+
+<script>
+
+function openModal(){
+document.getElementById("modal").style.display="flex";
+}
+
+function closeModal(){
+document.getElementById("modal").style.display="none";
+document.getElementById("form").style.display="flex";
+document.getElementById("success").style.display="none";
+}
+
+document.getElementById("form").addEventListener("submit", function(e){
+e.preventDefault();
+this.style.display="none";
+document.getElementById("success").style.display="block";
+});
+
+</script>
+
+</body>
+</html>
